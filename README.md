@@ -1,3 +1,5 @@
 # Portfolio
-My Portfolio
-Work in Progress, but im putting all my skills and knowledge of Web Development to make a simple portfolio for myself :)
+My Portfolio :)
+
+I created a portfolio website using HTML5, CSS3, and JavaScript to showcase my projects and skills. The portfolio features a clean design and interactive elements to provide a smooth user experience.
+
