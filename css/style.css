@@ -595,7 +595,6 @@ body.light-mode .project-btn:hover {
     filter: invert(100%);
 }
 
-/* Email color changes with mode */
 .project-usage a {
     color: #ffffff;
     transition: color 0.3s;
