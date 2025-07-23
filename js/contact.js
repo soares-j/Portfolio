@@ -1,7 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
     const switchBtn = document.querySelector('.mode-switch');
     const langSwitch = document.getElementById('lang-switch');
+    const header = document.querySelector('.header h1');
+    const headerBtns = document.querySelectorAll('.header-buttons a button');
+
     let pt = {
+        portfolio: "Meu Portfólio.",
+        home: "Início",
+        projects: "Projetos",
+        skills: "Habilidades",
+        contact: "Contato",
+        github: "Github",
         contact_title: "Fale comigo",
         contact_desc: "Sinta-se à vontade para entrar em contato para oportunidades, colaborações ou dúvidas!",
         name: "Seu Nome",
@@ -14,6 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
         mode_light: "Modo escuro"
     };
     let en = {
+        portfolio: "My Portfolio.",
+        home: "Home",
+        projects: "Projects",
+        skills: "Skills",
+        contact: "Contact",
+        github: "Github",
         contact_title: "Contact Me",
         contact_desc: "Feel free to reach out for opportunities, collaborations or questions!",
         name: "Your Name",
@@ -53,6 +68,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function applyLang(lang) {
+        // Translate header and header buttons
+        if (header) header.textContent = lang.portfolio;
+        if (headerBtns.length >= 5) {
+            headerBtns[0].textContent = lang.home;
+            headerBtns[1].textContent = lang.projects;
+            headerBtns[2].textContent = lang.skills;
+            headerBtns[3].textContent = lang.contact;
+            headerBtns[4].textContent = lang.github;
+        }
         document.getElementById('contact-title').textContent = lang.contact_title;
         document.getElementById('contact-desc').textContent = lang.contact_desc;
         document.getElementById('name').placeholder = lang.name;
