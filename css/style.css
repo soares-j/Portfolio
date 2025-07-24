@@ -914,10 +914,14 @@ body.light-mode .contact-form-usage a {
     body, html {
         scrollbar-width: none; /* Firefox */
         -ms-overflow-style: none; /* Internet Explorer and Edge */
+        background: linear-gradient(120deg, #092261 0%, #02254e 60%, #0c0f2b 100%);
     }
     body::-webkit-scrollbar,
     html::-webkit-scrollbar {
         display: none; /* Chrome, Safari, Opera */
+    }
+    body.light-mode, html.light-mode {
+        background: linear-gradient(120deg, #f5f7fa 0%, #c3cfe2 60%, #a0b6d6 100%);
     }
 }
 
