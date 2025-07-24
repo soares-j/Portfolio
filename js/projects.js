@@ -114,30 +114,38 @@ document.addEventListener('DOMContentLoaded', function() {
         updateButtonText();
         welcomeText.textContent = langObj.welcome;
 
-        projectsCards.innerHTML = langObj.cards.map((card, idx) => `
-            <div class="project-block">
-                <div class="project-title">
-                    <img class="projects-icon" src="${card.icon}" alt="${card.title} Icon">
-                    ${card.title}
+        projectsCards.innerHTML = langObj.cards.map((card, idx) => {
+            let link = "";
+            if (idx === 0) {
+                link = "https://gragas.site";
+            } else if (idx === 1) {
+                link = "https://github.com/soares-j/Cryptography";
+            } else if (idx === 2) {
+                link = "https://github.com/soares-j/WorldClicker";
+            }
+            return `
+                <div class="project-block">
+                    <div class="project-title">
+                        <img class="projects-icon" src="${card.icon}" alt="${card.title} Icon">
+                        ${card.title}
+                    </div>
+                    <div class="project-subtitle">
+                        ${card.subtitle}
+                    </div>
+                    <div class="project-desc">${card.desc}</div>
+                    <div style="text-align:center;">
+                        <a href="${link}" target="_blank">
+                            <button class="project-btn" style="margin-top:1.2rem;">
+                                ${idx === 0 
+                                    ? (current === 'pt' ? 'Acessar Site' : 'Visit Website')
+                                    : (current === 'pt' ? 'Ver no Github' : 'View on Github')}
+                            </button>
+                        </a>
+                    </div>
+                    <div class="project-usage">${card.usage}</div>
                 </div>
-                <div class="project-subtitle">
-                    ${card.subtitle}
-                </div>
-                <div class="project-desc">${card.desc}</div>
-                <div style="text-align:center;">
-                    <a href="${idx === 0 
-                        ? 'https://gragas.site' 
-                        : 'https://github.com/soares-j/Cryptography'}" target="_blank">
-                        <button class="project-btn" style="margin-top:1.2rem;">
-                            ${idx === 0 
-                                ? (current === 'pt' ? 'Acessar Site' : 'Visit Website')
-                                : (current === 'pt' ? 'Ver no Github' : 'View on Github')}
-                        </button>
-                    </a>
-                </div>
-                <div class="project-usage">${card.usage}</div>
-            </div>
-        `).join('');
+            `;
+        }).join('');
     }
 
     langSwitch.textContent = current === 'pt' ? 'EN' : 'PT';
