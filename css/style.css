@@ -911,17 +911,18 @@ body.light-mode .contact-form-usage a {
 }
 
 @media (max-width: 600px) {
-    body, html {
+    body {
         scrollbar-width: none; /* Firefox */
         -ms-overflow-style: none; /* Internet Explorer and Edge */
         background: linear-gradient(120deg, #092261 0%, #02254e 60%, #0c0f2b 100%);
+        transition: background 0.6s;
     }
-    body::-webkit-scrollbar,
-    html::-webkit-scrollbar {
+    body::-webkit-scrollbar {
         display: none; /* Chrome, Safari, Opera */
     }
-    body.light-mode, html.light-mode {
+    body.light-mode {
         background: linear-gradient(120deg, #f5f7fa 0%, #c3cfe2 60%, #a0b6d6 100%);
+        transition: background 0.6s;
     }
 }
 
