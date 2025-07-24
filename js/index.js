@@ -1,6 +1,41 @@
-document.addEventListener('DOMContentLoaded', function() {
+function setupLangAndModeSwitch(langObj, applyLangCallback) {
     const switchBtn = document.querySelector('.mode-switch');
     const langSwitch = document.getElementById('lang-switch');
+    let current = localStorage.getItem('lang') || 'en';
+
+    function updateButtonText() {
+        if (document.body.classList.contains('light-mode')) {
+            switchBtn.textContent = langObj[current].mode_light;
+        } else {
+            switchBtn.textContent = langObj[current].mode_dark;
+        }
+    }
+
+    if (switchBtn) {
+        switchBtn.addEventListener('click', function() {
+            document.body.classList.toggle('light-mode');
+            updateButtonText();
+            localStorage.setItem('mode', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+        });
+        if (localStorage.getItem('mode') === 'light') {
+            document.body.classList.add('light-mode');
+        }
+        updateButtonText();
+    }
+
+    if (langSwitch) {
+        langSwitch.textContent = current === 'pt' ? 'EN' : 'PT';
+        applyLangCallback(langObj[current]);
+        langSwitch.addEventListener('click', function() {
+            current = current === 'pt' ? 'en' : 'pt';
+            langSwitch.textContent = current === 'pt' ? 'EN' : 'PT';
+            applyLangCallback(langObj[current]);
+            localStorage.setItem('lang', current);
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
     let pt = {
         portfolio: "Meu Portfólio.",
         home: "Início",
@@ -31,64 +66,32 @@ document.addEventListener('DOMContentLoaded', function() {
         extra: "I have experience in academic and personal projects, including web development, Python, and creating interactive dashboards in Power BI. I am proactive, organized, and always eager to learn new technologies to improve my skills and contribute to teams.",
         cv: "Download CV"
     };
+    let langObj = { pt, en };
     let current = localStorage.getItem('lang') || 'en';
 
-    function getLangObj() {
-        return current === 'pt' ? pt : en;
-    }
+    function applyLang(lang) {
+        document.querySelector('.header h1').textContent = lang.portfolio;
+        document.querySelectorAll('.header-buttons a')[0].querySelector('button').textContent = lang.home;
+        document.querySelectorAll('.header-buttons a')[1].querySelector('button').textContent = lang.projects;
+        document.querySelectorAll('.header-buttons a')[2].querySelector('button').textContent = lang.skills;
+        document.querySelectorAll('.header-buttons a')[3].querySelector('button').textContent = lang.contact;
+        document.querySelectorAll('.header-buttons a')[4].querySelector('button').textContent = lang.github;
+        document.querySelector('.welcome-text').textContent = lang.welcome;
+        document.querySelector('.home-name').textContent = lang.name;
+        document.querySelector('.home-brief').textContent = lang.brief;
+        document.querySelector('.home-extra').textContent = lang.extra;
+        document.querySelector('.cv-btn').textContent = lang.cv;
 
-    function updateButtonText() {
-        const langObj = getLangObj();
-        if (document.body.classList.contains('light-mode')) {
-            switchBtn.textContent = langObj.mode_light;
+        // Change CV download link based on language
+        const cvLink = document.querySelector('.cv-btn').parentElement;
+        if (current === 'pt') {
+            cvLink.setAttribute('href', 'lib/docs/JoaoGabriel_CV-PTBR.pdf');
         } else {
-            switchBtn.textContent = langObj.mode_dark;
+            cvLink.setAttribute('href', 'lib/docs/JoaoGabriel_CV-EN.pdf');
         }
     }
 
-    if (switchBtn) {
-        switchBtn.addEventListener('click', function() {
-            document.body.classList.toggle('light-mode');
-            updateButtonText();
-            localStorage.setItem('mode', document.body.classList.contains('light-mode') ? 'light' : 'dark');
-        });
-        
-        if (localStorage.getItem('mode') === 'light') {
-            document.body.classList.add('light-mode');
-        }
-        updateButtonText();
-    }
+    setupLangAndModeSwitch(langObj, applyLang);
 
-    if (langSwitch) {
-        langSwitch.textContent = current === 'pt' ? 'EN' : 'PT';
-        function applyLang(lang) {
-            document.querySelector('.header h1').textContent = lang.portfolio;
-            document.querySelectorAll('.header-buttons a')[0].querySelector('button').textContent = lang.home;
-            document.querySelectorAll('.header-buttons a')[1].querySelector('button').textContent = lang.projects;
-            document.querySelectorAll('.header-buttons a')[2].querySelector('button').textContent = lang.skills;
-            document.querySelectorAll('.header-buttons a')[3].querySelector('button').textContent = lang.contact;
-            document.querySelectorAll('.header-buttons a')[4].querySelector('button').textContent = lang.github;
-            updateButtonText();
-            document.querySelector('.welcome-text').textContent = lang.welcome;
-            document.querySelector('.home-name').textContent = lang.name;
-            document.querySelector('.home-brief').textContent = lang.brief;
-            document.querySelector('.home-extra').textContent = lang.extra;
-            document.querySelector('.cv-btn').textContent = lang.cv;
-
-            // Change CV download link based on language
-            const cvLink = document.querySelector('.cv-btn').parentElement;
-            if (current === 'pt') {
-                cvLink.setAttribute('href', 'lib/docs/JoaoGabriel_CV-PTBR.pdf');
-            } else {
-                cvLink.setAttribute('href', 'lib/docs/JoaoGabriel_CV-EN.pdf');
-            }
-        }
-        applyLang(getLangObj());
-        langSwitch.addEventListener('click', function() {
-            current = current === 'pt' ? 'en' : 'pt';
-            langSwitch.textContent = current === 'pt' ? 'EN' : 'PT';
-            applyLang(getLangObj());
-            localStorage.setItem('lang', current);
-        });
-    }
+    applyLang(langObj[current]);
 });

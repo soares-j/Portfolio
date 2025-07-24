@@ -31,6 +31,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 subtitle: "Python",
                 desc: "Programa de criptografia desenvolvido em Python como parte de um projeto acadêmico. Foi projetado para aplicar técnicas básicas de criptografia e descriptografia, ajudando a reforçar conceitos essenciais de segurança da informação e programação em Python.",
                 usage: "Utilizado para implementar lógica de criptografia e praticar conceitos de programação. Disponível no GitHub."
+            },
+            {
+                icon: "../lib/img/java-icon.png",
+                title: "WorldClicker",
+                subtitle: "Java",
+                desc: "WorldClicker é um projeto acadêmico em Java inspirado no jogo \"Cookie Clicker\". Desenvolvido para reforçar conceitos de programação orientada a objetos e interface gráfica, este projeto proporciona uma experiência divertida enquanto aprimora habilidades essenciais de desenvolvimento em Java.",
+                usage: "Projeto para praticar lógica orientada a objetos e GUI em Java. Disponível no GitHub."
             }
         ]
     };
@@ -59,6 +66,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 subtitle: "Python",
                 desc: "Cryptography program developed in Python as part of an academic project. It was designed to apply basic encryption and decryption techniques, helping to reinforce core concepts of information security and Python programming.",
                 usage: "Used to implement encryption logic and practice programming concepts. Available on GitHub."
+            },
+            {
+                icon: "../lib/img/java-icon.png",
+                title: "WorldClicker",
+                subtitle: "Java",
+                desc: "WorldClicker is a Java academic project inspired by the game \"Cookie Clicker\". Developed to reinforce object-oriented programming and GUI concepts, this project provides a fun experience while improving essential Java development skills.",
+                usage: "Project to practice object-oriented logic and GUI in Java. Available on GitHub."
             }
         ]
     };
