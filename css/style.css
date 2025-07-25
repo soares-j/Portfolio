@@ -764,11 +764,10 @@ body.light-mode .contact-form-usage a {
     .skills-block-big,
     .project-block,
     .contact-form-block {
-        max-width: 88vw;
-        width: 100%;
-        margin: 1.2rem auto;
-        padding: 2.7rem 0.5rem;
-        border-radius: 18px;
+        padding: 1.7rem 1.2rem;
+        margin: 0.7rem auto 0.7rem auto;
+        max-width: 80vw;
+        border-radius: 12px 22px 12px 22px;
         box-shadow: 0 3px 12px #0002;
         display: flex;
         flex-direction: column;
