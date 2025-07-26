@@ -83,13 +83,12 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.cv-btn').textContent = lang.cv;
 
         // Change CV download link based on language
-        const cvLink = document.querySelector('.cv-btn').parentElement;
-        if (current === 'pt') {
-            cvLink.setAttribute('href', '../lib/docs/JoaoGabriel_CV-PTBR.pdf');
-        } else {
-            cvLink.setAttribute('href', '../lib/docs/JoaoGabriel_CV-EN.pdf');
-        }
-    }
+        const cvLink = document.querySelector('.cv-btn');
+if (current === 'pt') {
+    cvLink.setAttribute('href', '../lib/docs/JoaoGabriel_CV-PTBR.pdf');
+} else {
+    cvLink.setAttribute('href', '../lib/docs/JoaoGabriel_CV-EN.pdf');
+}
 
     setupLangAndModeSwitch(langObj, applyLang);
 
