@@ -1,7 +1,7 @@
 function setupLangAndModeSwitch(langObj, applyLangCallback) {
     const switchBtn = document.querySelector('.mode-switch');
     const langSwitch = document.getElementById('lang-switch');
-    let current = localStorage.getItem('lang') || 'en';
+    let current = localStorage.getItem('lang') || 'pt'; // default to pt
 
     function updateButtonText() {
         if (document.body.classList.contains('light-mode')) {
@@ -25,11 +25,11 @@ function setupLangAndModeSwitch(langObj, applyLangCallback) {
 
     if (langSwitch) {
         langSwitch.textContent = current === 'pt' ? 'EN' : 'PT';
-        applyLangCallback(langObj[current]);
+        applyLangCallback(langObj[current], current);
         langSwitch.addEventListener('click', function() {
             current = current === 'pt' ? 'en' : 'pt';
             langSwitch.textContent = current === 'pt' ? 'EN' : 'PT';
-            applyLangCallback(langObj[current]);
+            applyLangCallback(langObj[current], current);
             localStorage.setItem('lang', current);
         });
     }
@@ -67,9 +67,9 @@ document.addEventListener('DOMContentLoaded', function() {
         cv: "Download CV"
     };
     let langObj = { pt, en };
-    let current = localStorage.getItem('lang') || 'en';
+    let current = localStorage.getItem('lang') || 'pt';
 
-    function applyLang(lang) {
+    function applyLang(lang, langCode) {
         document.querySelector('.header h1').textContent = lang.portfolio;
         document.querySelectorAll('.header-buttons a')[0].querySelector('button').textContent = lang.home;
         document.querySelectorAll('.header-buttons a')[1].querySelector('button').textContent = lang.projects;
@@ -84,13 +84,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Change CV download link based on language
         const cvLink = document.querySelector('.cv-btn');
-            if (current === 'pt') {
-                cvLink.setAttribute('href', '../lib/docs/JoaoGabriel_CV-PTBR.pdf');
-            } else {
-                cvLink.setAttribute('href', '../lib/docs/JoaoGabriel_CV-EN.pdf');
-            }
+        if (langCode === 'pt') {
+            cvLink.setAttribute('href', 'lib/docs/JoaoGabriel_CV-PTBR.pdf');
+        } else {
+            cvLink.setAttribute('href', 'lib/docs/JoaoGabriel_CV-EN.pdf');
+        }
+    }
 
     setupLangAndModeSwitch(langObj, applyLang);
 
-    applyLang(langObj[current]);
+    // Initial language setup
+    applyLang(langObj[current], current);
 });
