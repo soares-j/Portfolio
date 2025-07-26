@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         cards: [
             {
                 icon: "../lib/img/html5-icon.png",
-                title: "HTML5 & CSS3 & JavaScript",
+                title: "HTML5, CSS3 & JavaScript",
                 desc: "Experiência em desenvolvimento web utilizando HTML5, CSS3 e JavaScript.",
                 usage: "Aplicado em projetos acadêmicos e pessoais para construção e manutenção de interfaces web dinâmicas."
             },
