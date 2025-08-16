@@ -340,6 +340,12 @@ body.light-mode .cv-btn:hover {
     position: relative;
 }
 
+/* Center project content */
+.project-block > div[style*="text-align:center"] {
+    margin-top: auto;
+    margin-bottom: 2.2rem;
+}
+
 .project-title {
     margin: -2.5rem 4rem 0.7rem 0;
     font-size: 1.18rem;
