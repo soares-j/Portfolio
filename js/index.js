@@ -30,6 +30,7 @@ function setupLangAndModeSwitch(langObj, applyLangCallback) {
             current = current === 'pt' ? 'en' : 'pt';
             langSwitch.textContent = current === 'pt' ? 'EN' : 'PT';
             applyLangCallback(langObj[current], current);
+            updateButtonText();
             localStorage.setItem('lang', current);
         });
     }
