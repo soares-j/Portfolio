@@ -95,6 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
         current = current === 'pt' ? 'en' : 'pt';
         langSwitch.textContent = current === 'pt' ? 'EN' : 'PT';
         applyLang(getLangObj());
+        updateButtonText();
         localStorage.setItem('lang', current);
     });
 });
