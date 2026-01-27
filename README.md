@@ -6,9 +6,9 @@ Este é o repositório do meu portfólio pessoal, desenvolvido para apresentar m
 
 Veja abaixo duas imagens da homepage do site:
 
-![Homepage - Modo Claro](<img width="1870" height="920" alt="image" src="https://github.com/user-attachments/assets/2663573d-470c-4a21-b824-65ecc509e6bb" />
+![Homepage - Modo Claro](https://github.com/user-attachments/assets/2663573d-470c-4a21-b824-65ecc509e6bb>
 )
-![Homepage - Modo Escuro](<img width="1871" height="917" alt="image" src="https://github.com/user-attachments/assets/bf23a9f6-b7a6-47fe-b20d-02f704cc5c9e" />
+![Homepage - Modo Escuro](https://github.com/user-attachments/assets/bf23a9f6-b7a6-47fe-b20d-02f704cc5c9e>
 )
 
 ## Funcionalidades
