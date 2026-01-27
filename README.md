@@ -7,7 +7,7 @@ Este é o repositório do meu portfólio pessoal, desenvolvido para apresentar m
 Veja abaixo duas imagens da homepage do site:
 
 ![Homepage - Modo Claro](https://github.com/user-attachments/assets/2663573d-470c-4a21-b824-65ecc509e6bb>)
-![Homepage - Modo Escuro](<img width="1870" height="920" alt="image" src="https://github.com/user-attachments/assets/400a0c40-8208-499f-b1ab-037ea1bfa831" />)
+![Homepage - Modo Escuro]<img width="1869" height="918" alt="Captura de tela 2026-01-26 224055" src="https://github.com/user-attachments/assets/3e7ec0a4-d803-4b49-8b85-b414f4eefc6e" />
 
 
 ## Funcionalidades
