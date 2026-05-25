@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
         projectsCards.innerHTML = langObj.cards.map((card, idx) => {
             let link = "";
             if (idx === 0) {
-                link = "https://gragas.site";
+                link = "https://soares-j.github.io/grongos/";
             } else if (idx === 1) {
                 link = "https://github.com/soares-j/Cryptography";
             } else if (idx === 2) {
