@@ -86,9 +86,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Change CV download link based on language
         const cvLink = document.querySelector('.cv-btn');
         if (langCode === 'pt') {
-            cvLink.setAttribute('href', 'lib/docs/JoaoGabriel_CV-PTBR.pdf');
+            cvLink.setAttribute('href', 'lib/docs/Joao_Gabriel_Soares_Barreiros_CV_PT.pdf');
         } else {
-            cvLink.setAttribute('href', 'lib/docs/JoaoGabriel_CV-EN.pdf');
+            cvLink.setAttribute('href', 'lib/docs/Joao_Gabriel_Soares_Barreiros_CV_EN.pdf');
         }
     }
 
